@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DHSOnlineStore.Models.Product>;
+
+
+
+<form asp-action="Products" class="row row-cols-lg-auto g-3 align-items-center mb-3 px-2">
+    <div class="col-12">
+        <label class="visually-hidden" for="inlineFormInputGroupUsername">Search title</label>
+        <div class="input-group">
+            <div class="input-group-text"></div>
+            <input type="text" class="form-control" id="sTerm" name="sTerm" placeholder="Search title">
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" id="" class="btn btn-primary">Search</button>
+        <a href="/Product/Products" class="btn btn-dark">Reset</a>
+    </div>
+</form>
+
+@if (Model.Count() > 0)
+{
+    <div class="w-100 d-flex flex-wrap">
+        @foreach (var product in Model)
+        {
+            <div class="card mx-2 mb-4" style="width: 15rem;">
+                @if (string.IsNullOrEmpty(product.Image))
+                {
+                    <img style="width:100%;height:180px;" src="/images/default.jpg" class="card-img-top" alt="...">
+                }
+                else
+                {
+                    <img style="width:100%;height:225px;" src="/images/@product.Image" class="card-img-top" alt="...">
+                }
+                <div class="card-body">
+                    <p class="card-text">
+                        Brand: @product.Brand
+                        <br />
+                        Product: @product.Name
+                        <br />
+                        Price: @product.Price
+                        <br />
+                    </p>
+                    @* @if (product.Stock.Quantity > 0)
+                    {
+                        <button class="btn btn-primary" onclick="add(@product.Id)">Add To Cart</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-primary" onclick="alert(`Sorry! This item is out of stock.`)">Add To Cart</button>
+                    } *@
+
+                    <button class="btn btn-primary" onclick="add(@product.Id)">Cart</button>
+                    <a class="btn btn-outline-primary" asp-controller="Product" asp-action="ProductDetails" asp-route-id="@product.Id">View</a>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@section Scripts {
+    <script>
+        async function add(productId) {
+            try {
+                var response = await fetch(`/Cart/AddItem?productId=${productId}`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    console.log(result);
+                    // var cartCountElement = document.getElementById("cartCount");
+                    alert("Item successfuly added to cart");
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+
+}

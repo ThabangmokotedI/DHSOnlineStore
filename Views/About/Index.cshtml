@@ -1,0 +1,15 @@
+﻿@model DHSOnlineStore.Models.AboutViewModel
+
+<h1>About Us</h1>
+<p>@Model.CompanyDescription</p>
+<h3>Mission</h3>
+<p>@Model.Mission</p>
+<h3>Vision</h3>
+<p>@Model.Vision</p>
+<h3>Values</h3>
+<ul>
+    @foreach (var value in Model.Values)
+    {
+        <li>@value</li>
+    }
+</ul>

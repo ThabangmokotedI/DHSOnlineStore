@@ -1,0 +1,159 @@
+/* Base font size adjustments */
+html {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif; /* Use a clean and modern font */
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Button focus and form focus colors */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem #333, 0 0 0 0.25rem #a00000; /* Dark gray with red accent */
+}
+
+/* Layout adjustments */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #1a1a1a; /* Dark background for a secure feel */
+    color: #e0e0e0; /* Light gray text for readability */
+}
+
+/* Header and Navigation */
+.navbar {
+    background-color: #2c2c2c; /* Darker gray background for navbar */
+    color: #ffffff;
+}
+
+.navbar-brand, .nav-link {
+    color: #e0e0e0 !important; /* Light gray for navigation links */
+}
+
+    .nav-link:hover {
+        color: #a00000 !important; /* Red accent for hover effect */
+    }
+
+/* Buttons */
+.btn-primary {
+    background-color: #a00000; /* Red primary button for calls to action */
+    border-color: #a00000;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: #b30000; /* Slightly darker red on hover */
+        border-color: #b30000;
+    }
+
+.btn-secondary {
+    background-color: #333333; /* Dark gray for secondary actions */
+    border-color: #333333;
+    color: #e0e0e0;
+}
+
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+        background-color: #444444; /* Slightly lighter gray on hover */
+        border-color: #444444;
+    }
+
+/* Form Controls */
+.form-control {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+    .form-control::placeholder {
+        color: #aaaaaa; /* Light gray placeholder text */
+    }
+
+/* Footer */
+footer {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+    footer a {
+        color: #a00000;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            color: #b30000;
+        }
+
+/* Headings and Text */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 700; /* Bold headings for emphasis */
+}
+
+p, li, .form-text {
+    color: #e0e0e0;
+}
+
+/* Links */
+a {
+    color: #a00000; /* Red accent color for links */
+}
+
+    a:hover {
+        color: #b30000;
+    }
+
+/* Card Style */
+.card {
+    background-color: #2a2a2a;
+    border: none;
+    color: #e0e0e0;
+}
+
+.card-header {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.card-body {
+    color: #e0e0e0;
+}
+
+/* Table Styles */
+.table {
+    color: #e0e0e0;
+}
+
+    .table th {
+        background-color: #333333;
+        color: #ffffff;
+    }
+
+    .table td {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+/* Miscellaneous Styles */
+.alert {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.alert-danger {
+    background-color: #a00000;
+    color: #ffffff;
+}

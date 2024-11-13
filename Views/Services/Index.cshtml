@@ -1,0 +1,26 @@
+﻿@model DHSOnlineStore.Models.ServicesViewModel
+
+<h1>Our Services</h1>
+<h3>Security Services</h3>
+<ul>
+    @foreach (var service in Model.SecurityServices)
+    {
+        <li>@service</li>
+    }
+</ul>
+
+<h3>Cleaning Services</h3>
+<ul>
+    @foreach (var service in Model.CleaningServices)
+    {
+        <li>@service</li>
+    }
+</ul>
+
+<h3>ICT Services</h3>
+<ul>
+    @foreach (var service in Model.ICTServices)
+    {
+        <li>@service</li>
+    }
+</ul>
